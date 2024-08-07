@@ -17,10 +17,10 @@ args = parser.parse_args()
 
 if args.mode == 'prediction':
     # Load the saved model
-    model = tf.keras.models.load_model('hikaru_chess_model_v2.h5')
+    model = tf.keras.models.load_model('model/hikaru_chess_model_v2.h5')
 
     # Load the move encoder
-    move_encoder_keys = np.load('move_encoder_classes_v2.npy', allow_pickle=True)
+    move_encoder_keys = np.load('model/move_encoder_classes_v2.npy', allow_pickle=True)
     move_encoder = {uci: idx for idx, uci in enumerate(move_encoder_keys)}
 
 def update_board(board_state):
